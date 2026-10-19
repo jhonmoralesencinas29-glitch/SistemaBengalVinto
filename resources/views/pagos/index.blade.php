@@ -49,21 +49,27 @@
 
     .boton-registrar {
         min-width: 165px;
-        padding: 16px 22px;
+        min-height: 46px;
+        padding: 0 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
         border: 1px solid #ffffff;
-        border-radius: 9px;
+        border-radius: 8px;
         background: #ffffff;
-        color: #111111;
-        font-size: 15px;
-        font-weight: 400;
+        color: #202124;
+        font-size: 14px;
+        font-weight: normal;
         text-align: center;
         text-decoration: none;
         transition: 0.2s ease;
+
     }
 
     .boton-registrar:hover {
-        border-color: #1f6fc4;
-        background: #1f6fc4;
+        border-color: #ffffff;
+        background: transparent;
         color: #ffffff;
         text-decoration: none;
     }
@@ -100,7 +106,7 @@
 
     .resumen-cuadricula {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         border: 1px solid #d7dfe9;
         border-radius: 13px;
         overflow: hidden;
@@ -718,21 +724,6 @@
                 <span class="resumen-valor">
                     Bs {{ number_format(
                         $totalRecaudado,
-                        2,
-                        ',',
-                        '.'
-                    ) }}
-                </span>
-            </div>
-
-            <div class="resumen-tarjeta">
-                <span class="resumen-etiqueta">
-                    Recaudado hoy
-                </span>
-
-                <span class="resumen-valor">
-                    Bs {{ number_format(
-                        $recaudadoHoy,
                         2,
                         ',',
                         '.'

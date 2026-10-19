@@ -62,7 +62,9 @@
     }
 
     .boton-nueva-reunion:hover {
-        background: #f1f5f9;
+        border-color: #ffffff;
+        background: transparent;
+        color: #ffffff;
     }
 
     .mensaje-exito {

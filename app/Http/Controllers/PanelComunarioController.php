@@ -7,6 +7,8 @@ use App\Models\Pago;
 use App\Models\Reunion;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Http\Response;
 
 class PanelComunarioController extends Controller
 {
@@ -155,6 +157,32 @@ class PanelComunarioController extends Controller
         }
 
         return view('pagos.comprobante', compact('pago'));
+    }
+
+    public function descargarComprobante(Pago $pago): Response
+    {
+        $comunario = $this->obtenerComunario();
+
+        $pago->load([
+            'aporteComunario.aporte.tipoAporte',
+            'aporteComunario.comunario.comunidad',
+            'usuario',
+            'comprobante',
+        ]);
+
+        abort_if(!$pago->comprobante, 404);
+
+        if ($pago->aporteComunario->id_comunario !== $comunario->id_comunario) {
+            abort(403, 'No tienes permiso para descargar este comprobante.');
+        }
+
+        $nombreArchivo = 'comprobante-'
+            .$pago->comprobante->numero_comprobante
+            .'.pdf';
+
+        return Pdf::loadView('pagos.comprobante-pdf', compact('pago'))
+            ->setPaper('letter', 'portrait')
+            ->download($nombreArchivo);
     }
 
     public function reuniones(): View

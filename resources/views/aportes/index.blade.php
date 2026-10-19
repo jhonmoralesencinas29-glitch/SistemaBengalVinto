@@ -69,8 +69,8 @@
     }
 
     .boton-nuevo:hover {
-        color: #202124;
-        background: #f1f3f4;
+        color: #ffffff;
+        background: transparent;
     }
 
     .mensaje-exito {

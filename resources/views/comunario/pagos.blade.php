@@ -23,8 +23,8 @@
         border-radius: 20px;
         background-image:
             linear-gradient(
-                rgba(0, 0, 0, 0.60),
-                rgba(0, 0, 0, 0.60)
+                rgba(0, 0, 0, 0.40),
+                rgba(0, 0, 0, 0.10)
             ),
             url('{{ asset('images/pagos.jpg') }}');
         background-position: center;

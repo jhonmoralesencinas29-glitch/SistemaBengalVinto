@@ -18,8 +18,8 @@
         border-radius: 20px;
         background-image:
             linear-gradient(
-                rgba(0, 35, 80, 0.62),
-                rgba(0, 35, 80, 0.62)
+                rgba(0, 0, 0, 0.40),
+                rgba(0, 0, 0, 0.10)
             ),
             url('{{ asset('images/plaza.png') }}');
         background-position: center;

@@ -10,7 +10,7 @@
     }
 
     .cabecera-reportes {
-        min-height: 220px;
+        min-height: 235px;
         margin-bottom: 26px;
         padding: 40px;
         display: flex;
@@ -19,7 +19,7 @@
         overflow: hidden;
         border-radius: 20px;
         background-image:
-            linear-gradient(90deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .12)),
+            linear-gradient(90deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .12)),
             url('{{ asset('images/reporte.jpg') }}');
         background-size: cover;
         background-position: center;

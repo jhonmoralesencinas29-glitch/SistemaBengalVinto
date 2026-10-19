@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Aporte;
 use App\Models\Comunario;
+use App\Models\Reunion;
 use Illuminate\View\View;
 
 class DashboardController extends Controller
@@ -18,10 +19,13 @@ class DashboardController extends Controller
         $totalAportesActivos = Aporte::where('estado', 'activo')
             ->count();
 
+        $totalReuniones = Reunion::count();
+
         return view('dashboard', compact(
             'totalComunarios',
             'comunariosActivos',
-            'totalAportesActivos'
+            'totalAportesActivos',
+            'totalReuniones'
         ));
     }
 }

@@ -49,7 +49,7 @@ class ReporteController extends Controller
             .now()->format('Ymd_His')
             .'.pdf';
 
-        return Pdf::loadView('reportes.imprimir', $datos)
+        return Pdf::loadView('reportes.imprimir', $datos + ['pdf' => true])
             ->setPaper('letter', 'portrait')
             ->download($nombre);
     }

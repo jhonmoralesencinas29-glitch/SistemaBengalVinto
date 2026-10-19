@@ -51,6 +51,11 @@ Route::middleware('auth')->group(function () {
         )->name('comunario.comprobantes');
 
         Route::get(
+            '/mis-comprobantes/{pago}/pdf',
+            [PanelComunarioController::class, 'descargarComprobante']
+        )->name('comunario.comprobante.pdf');
+
+        Route::get(
             '/mis-comprobantes/{pago}',
             [PanelComunarioController::class, 'verComprobante']
         )->name('comunario.comprobante');

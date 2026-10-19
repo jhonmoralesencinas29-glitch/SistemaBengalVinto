@@ -341,30 +341,7 @@
                     <span>Aportes activos</span>
                 </div>
             </article>
-
-            <article class="resumen-item">
-                <div class="resumen-icono">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <rect
-                            x="3"
-                            y="5"
-                            width="18"
-                            height="14"
-                            rx="2"
-                        ></rect>
-                        <path d="M3 10h18"></path>
-                        <path d="M7 15h4"></path>
-                    </svg>
-                </div>
-
-                <div class="resumen-informacion">
-                    <strong>
-                        {{ $totalPagos ?? 0 }}
-                    </strong>
-                    <span>Pagos registrados</span>
-                </div>
-            </article>
-
+            
             <article class="resumen-item">
                 <div class="resumen-icono">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -389,76 +366,6 @@
                     <span>Reuniones programadas</span>
                 </div>
             </article>
-        </div>
-    </section>
-
-    <section class="panel-dashboard">
-        <div class="titulo-panel">
-            <h2>¿Qué deseas administrar?</h2>
-            <p>Selecciona una de las opciones disponibles.</p>
-        </div>
-
-        <div class="accesos-dashboard">
-            <a
-                href="{{ route('comunidades.index') }}"
-                class="acceso-dashboard"
-            >
-                <div class="acceso-icono">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M3 21V9l5-4 4 3 4-3 5 4v12"></path>
-                        <path d="M8 5v16"></path>
-                        <path d="M16 5v16"></path>
-                        <path d="M5 12h1"></path>
-                        <path d="M10 12h4"></path>
-                        <path d="M18 12h1"></path>
-                    </svg>
-                </div>
-
-                <div class="acceso-informacion">
-                    <h3>Comunidades</h3>
-
-                    <p>
-                        Consulta las comunidades y sus comunarios registrados.
-                    </p>
-                </div>
-
-                <span class="acceso-flecha" aria-hidden="true">
-                    ›
-                </span>
-            </a>
-
-            <a
-                href="{{ route('aportes.index') }}"
-                class="acceso-dashboard"
-            >
-                <div class="acceso-icono">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <rect
-                            x="4"
-                            y="3"
-                            width="16"
-                            height="18"
-                            rx="2"
-                        ></rect>
-                        <path d="M8 8h8"></path>
-                        <path d="M8 12h8"></path>
-                        <path d="M8 16h4"></path>
-                    </svg>
-                </div>
-
-                <div class="acceso-informacion">
-                    <h3>Aportes</h3>
-
-                    <p>
-                        Consulta, registra y realiza el seguimiento
-                        de los aportes.
-                    </p>
-                </div>
-
-                <span class="acceso-flecha" aria-hidden="true">
-                    ›
-                </span>
-            </a>
         </div>
     </section>
 </div>

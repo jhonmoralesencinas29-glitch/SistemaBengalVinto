@@ -320,10 +320,45 @@
                 page-break-inside: avoid;
             }
         }
+        
+            body.pdf-render .hoja {
+                width: auto;
+                min-height: auto;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            body.pdf-render .encabezado,
+            body.pdf-render .informacion,
+            body.pdf-render .resumen,
+            body.pdf-render .firmas {
+                display: table;
+                width: 100%;
+                table-layout: fixed;
+            }
+
+            body.pdf-render .encabezado > div,
+            body.pdf-render .informacion-item,
+            body.pdf-render .resumen-item,
+            body.pdf-render .firma {
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            body.pdf-render .encabezado > div:first-child,
+            body.pdf-render .encabezado > div:last-child {
+                width: 95px;
+            }
+
+            body.pdf-render .informacion-item,
+            body.pdf-render .firma {
+                width: 50%;
+            }
     </style>
 </head>
 
-<body>
+<body class="{{ ($pdf ?? false) ? 'pdf-render' : '' }}">
     @php
         $tipoReporte = $tipo ?? request('tipo', 'asistencias');
 
@@ -392,6 +427,7 @@
             ?: $nombrePeriodo;
     @endphp
 
+    @unless($pdf ?? false)
     <div class="acciones">
         <a
             href="{{ route('reportes.index', request()->query()) }}"
@@ -407,13 +443,20 @@
         >
             Imprimir reporte
         </button>
-    </div>
 
+        <a
+            href="{{ route('reportes.pdf', request()->query()) }}"
+            class="boton boton-imprimir"
+        >
+            Descargar PDF
+        </a>
+    </div>
+    @endunless
     <main class="hoja">
         <header class="encabezado">
             <div>
                 <img
-                    src="{{ asset('images/logo.png') }}"
+                    src="{{ ($pdf ?? false) ? public_path('images/logo.png') : asset('images/logo.png') }}"
                     alt="Escudo del Cantón Bengal Vinto"
                     class="logo"
                 >

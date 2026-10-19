@@ -64,7 +64,7 @@
 
         .boton-imprimir {
             color: #ffffff;
-            background: #000000;
+            background: #1761bf;
         }
 
         .hoja {
@@ -496,14 +496,16 @@
 
     <div class="acciones-pagina">
         <a
-            href="{{ route('pagos.show', $pago) }}"
+            href="{{ request()->routeIs('comunario.comprobante') ? route('comunario.pagos') : route('pagos.show', $pago) }}"
             class="boton"
         >
             Volver
         </a>
 
         <a
-            href="{{ route('pagos.comprobante.pdf', $pago) }}"
+            href="{{ auth()->user()->rol === 'comunario'
+                ? route('comunario.comprobante.pdf', $pago)
+                 : route('pagos.comprobante.pdf', $pago) }}"
             class="boton boton-pdf"
         >
             Descargar PDF
