@@ -99,9 +99,9 @@ class AporteController extends Controller
                 "montos.{$comunidad->id_comunidad}"
             ] = [
                 'required',
-                'numeric',
-                'min:0.01',
-                'max:99999999.99',
+                'integer',
+                'min:1',
+                'max:99999999',
             ];
         }
 
@@ -113,8 +113,8 @@ class AporteController extends Controller
             ] = "Debe ingresar el monto para {$comunidad->nombre}.";
 
             $mensajes[
-                "montos.{$comunidad->id_comunidad}.numeric"
-            ] = "El monto de {$comunidad->nombre} debe ser numérico.";
+                "montos.{$comunidad->id_comunidad}.integer"
+            ] = "El monto de {$comunidad->nombre} debe expresarse en bolivianos enteros, sin centavos.";
 
             $mensajes[
                 "montos.{$comunidad->id_comunidad}.min"
@@ -302,9 +302,9 @@ class AporteController extends Controller
                 "montos.{$comunidad->id_comunidad}"
             ] = [
                 'required',
-                'numeric',
-                'min:0.01',
-                'max:99999999.99',
+                'integer',
+                'min:1',
+                'max:99999999',
             ];
         }
 
@@ -316,8 +316,8 @@ class AporteController extends Controller
             ] = "Debe ingresar el monto para {$comunidad->nombre}.";
 
             $mensajes[
-                "montos.{$comunidad->id_comunidad}.numeric"
-            ] = "El monto de {$comunidad->nombre} debe ser numérico.";
+                "montos.{$comunidad->id_comunidad}.integer"
+            ] = "El monto de {$comunidad->nombre} debe expresarse en bolivianos enteros, sin centavos.";
 
             $mensajes[
                 "montos.{$comunidad->id_comunidad}.min"

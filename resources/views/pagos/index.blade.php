@@ -695,44 +695,7 @@
             Registrar pago
         </a>
     </div>
-
-    <div class="resumen-pagos">
-        <div class="resumen-cabecera">
-            <h3>Resumen general</h3>
-
-            <p>
-                Información general de los pagos registrados en el sistema.
-            </p>
-        </div>
-
-        <div class="resumen-cuadricula">
-            <div class="resumen-tarjeta">
-                <span class="resumen-etiqueta">
-                    Pagos registrados
-                </span>
-
-                <span class="resumen-valor">
-                    {{ number_format($totalPagos, 0, ',', '.') }}
-                </span>
-            </div>
-
-            <div class="resumen-tarjeta">
-                <span class="resumen-etiqueta">
-                    Total recaudado
-                </span>
-
-                <span class="resumen-valor">
-                    Bs {{ number_format(
-                        $totalRecaudado,
-                        2,
-                        ',',
-                        '.'
-                    ) }}
-                </span>
-            </div>
-        </div>
-    </div>
-
+    
     <div class="aportes-panel">
         <div class="aportes-cabecera">
             <h3>Aportes creados por gestión</h3>

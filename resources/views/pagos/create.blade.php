@@ -623,9 +623,9 @@
                                 id="monto_pagado"
                                 class="campo"
                                 value="{{ old('monto_pagado') }}"
-                                min="0.01"
-                                step="0.01"
-                                placeholder="0,00"
+                                min="1"
+                                step="1"
+                                placeholder="0"
                                 required
                                 disabled
                             >

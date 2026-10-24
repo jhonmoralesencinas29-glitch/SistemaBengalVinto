@@ -282,9 +282,8 @@ class PagoController extends Controller
             ],
             'monto_pagado' => [
                 'required',
-                'numeric',
+                'integer',
                 'gt:0',
-                'decimal:0,2',
             ],
             'fecha_pago' => [
                 'nullable',
