@@ -732,10 +732,10 @@
                                     value="{{ old(
                                         'montos.'.$comunidad->id_comunidad
                                     ) }}"
-                                    min="0.01"
-                                    max="99999999.99"
-                                    step="0.01"
-                                    placeholder="{{ $cantidadActivos > 0 ? '0.00' : 'Sin contribuyentes' }}"
+                                    min="1"
+                                    max="99999999"
+                                    step="1"
+                                    placeholder="{{ $cantidadActivos > 0 ? '0' : 'Sin contribuyentes' }}"
                                     class="campo-monto monto-comunidad @error(
                                         'montos.'.$comunidad->id_comunidad
                                     ) control-error @enderror"
